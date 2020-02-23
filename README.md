@@ -2,14 +2,14 @@
 
 ## running tests
 
-### I have pipend
+### I have pipenv
 
-pipenv install
-pipenv run test
+    pipenv install --dev
+    pipenv run test
 
 ### I don't have pipenv
 
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
-pytest
+    python3 -m venv env
+    source env/bin/activate
+    pip install -r requirements.txt
+    pytest
