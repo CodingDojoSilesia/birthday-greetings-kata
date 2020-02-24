@@ -8,9 +8,6 @@ test = "pytest test"
 
 [dev-packages]
 pytest = "*"
-freezegun = "*"
-black = "*"
-flake8 = "*"
 
 [packages]
 
