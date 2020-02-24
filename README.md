@@ -7,8 +7,8 @@ As you’re a very friendly person, you would like to send a birthday note to al
 Your program should load data from flat file
 
     last_name, first_name, date_of_birth, email
-    Doe, John, 1982/10/08, john.doe@foobar.com
-    Ann, Mary, 1975/09/11, mary.ann@foobar.com
+    Doe, John, 1982-10-08, john.doe@foobar.com
+    Ann, Mary, 1975-09-11, mary.ann@foobar.com
 
 Then it should send messages to a people whose birthday is today.
 It is ok if it displays them instead of sending, but...
