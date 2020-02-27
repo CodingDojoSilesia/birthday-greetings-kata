@@ -35,3 +35,7 @@ Think how you can test it.
     source env/bin/activate
     pip install -r requirements.txt
     pytest
+
+## Generating your own fake data
+
+Please look into `fake_data.py` and adjust to your hearts content.

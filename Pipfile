@@ -8,6 +8,7 @@ test = "pytest test"
 
 [dev-packages]
 pytest = "*"
+faker = "*"
 
 [packages]
 
