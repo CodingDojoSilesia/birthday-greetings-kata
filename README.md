@@ -41,7 +41,8 @@ Think how you can test it.
 
 ## finished already
 
-Try integrating your code with <http://212.47.253.227/>
+Try integrating your code with <http://212.47.253.227/> or
+http://aa404f1e-8877-4595-bf82-e99d5c54ebd5.pub.cloud.scaleway.com/
 
 ## Generating your own fake data
 
