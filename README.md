@@ -2,7 +2,9 @@
 
 ## Goal
 
-As you’re a very friendly person, you would like to send a birthday note to all the friends you have. But you have a lot of friends and a bit lazy, it may take some times to write all the notes by hand. Make your computer do it.
+As you’re a very friendly person, you would like to send a birthday note to all
+the friends you have. But you have a lot of friends and a bit lazy, it may take
+some time to write all the notes by hand. Make your computer do it.
 
 Your program should load data from flat file
 
@@ -14,7 +16,8 @@ Then it should send messages to a people whose birthday is today.
 It is ok if it displays them instead of sending, but...
 
 Design your solution in way that business logic is not coupled with input and output.
-As an example if input data delivery will change to a webservice business logic must stay the same, or if it comes from SQLite db.
+As an example if input data delivery will change to a webservice business logic
+*must* stay the same, or if it comes from SQLite db.
 
 If you decide to send SMS business logic must stay the same. Or facebook message.
 
@@ -36,6 +39,11 @@ Think how you can test it.
     pip install -r requirements.txt
     pytest
 
+## finished already
+
+Try integrating your code with <http://212.47.253.227/>
+
 ## Generating your own fake data
 
-Please look into `fake_data.py` and adjust to your hearts content.
+If you would like to see how to work with other data sources please look
+into `fake_data.py` and adjust to your hearts content.
