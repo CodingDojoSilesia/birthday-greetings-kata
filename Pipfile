@@ -11,6 +11,8 @@ pytest = "*"
 faker = "*"
 
 [packages]
+beautifulsoup4 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
