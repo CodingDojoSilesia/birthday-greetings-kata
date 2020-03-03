@@ -2,7 +2,7 @@ import abc
 import csv
 import datetime
 from dataclasses import dataclass
-from typing import Union, Dict, List, Optional
+from typing import Union, Dict, List, Optional, Generator
 
 import dateutil
 import dateutil.parser
@@ -28,32 +28,30 @@ class BaseResource(abc.ABC):
 class CSVResource(BaseResource):
     def __init__(self, path):
         self._path = path
-        self._reader: Optional[List[Dict[str, Union[str, datetime.datetime]]]] = None
+        self._reader: Optional[List[Dict[str, Union[str, datetime]]]] = None
 
     def connect(self) -> None:
         with open(self._path, mode='r') as csv_input:
             self._reader = list(csv.DictReader(csv_input))
 
-    def parse(self) -> List[Person]:
-        persons = []
+    def parse(self) -> Generator:
+        assert self._reader
         for person in self._reader:
-            p = Person(address=person[' email'], data=person)
-            persons.append(p)
-        return persons
+            yield Person(address=person[' email'], data=person)
 
 
 class Handler:
     def __init__(self, resource: BaseResource):
         self._resource = resource
 
-    def _select_birthday_person(self, person):
-        person_birthday = dateutil.parser.parse(person[" date_of_birth"])
+    def _select_birthday_person(self, person_data):
+        person_birthday = dateutil.parser.parse(person_data[" date_of_birth"])
 
-        if int(person_birthday.month) == datetime.datetime.today().month == 2\
+        if int(person_birthday.month) == datetime.datetime.today().month == 2 \
                 and person_birthday.day == '29' and datetime.datetime.today().day == 28:
             return True
 
-        elif person_birthday.day == datetime.date.today().day\
+        elif person_birthday.day == datetime.date.today().day \
                 and int(person_birthday.month) == datetime.datetime.today().month:
             return True
 
