@@ -1,7 +1,9 @@
+from pathlib import Path
+
 from freezegun import freeze_time  # type: ignore
 from pytest import fixture  # type: ignore
 
-from .main import CSVResource, Handler, BaseResource, Person
+from .__main__ import CSVResource, Handler, BaseResource, Person
 
 
 @fixture
@@ -45,14 +47,18 @@ class MockResource(BaseResource):
 
 
 def test_csv_connector_is_connected():
-    csv_resource = CSVResource('../input.csv')
+    current_path = Path(__file__).resolve()
+    path = current_path.parent.parent / 'input.csv'
+    csv_resource = CSVResource(path)
     csv_resource.connect()
 
     assert csv_resource._reader is not None
 
 
 def test_csv_connector():
-    csv_resource = CSVResource('../input.csv')
+    current_path = Path(__file__).resolve()
+    path = current_path.parent.parent / 'input.csv'
+    csv_resource = CSVResource(path)
     csv_resource.connect()
 
     assert list(csv_resource.parse())[0].address.strip() == 'uwright@hotmail.com'

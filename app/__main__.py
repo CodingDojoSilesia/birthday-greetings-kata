@@ -2,6 +2,7 @@ import abc
 import csv
 import datetime
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Union, Dict, List, Optional, Generator
 
 import dateutil
@@ -92,7 +93,8 @@ class ConsoleService():
 
 
 if __name__ == '__main__':
-    path = '../input.csv'
+    current_path = Path(__file__).resolve()
+    path = current_path.parent.parent / 'input.csv'
 
     resource = CSVResource(path)
     resource.connect()
